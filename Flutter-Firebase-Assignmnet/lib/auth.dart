@@ -5,6 +5,8 @@ import 'package:form_field_validator/form_field_validator.dart';
 import 'login_screen.dart';  // Import Login Screen
 
 class AuthScreen extends StatefulWidget {
+  const AuthScreen({super.key});
+
   @override
   _AuthScreenState createState() => _AuthScreenState();
 }
@@ -41,7 +43,7 @@ class _AuthScreenState extends State<AuthScreen> {
               TextFormField(
                 decoration: InputDecoration(labelText: 'Name'),
                 onChanged: (value) => _name = value,
-                validator: nameValidator,
+                validator: nameValidator.call,
               ),
               SizedBox(height: 16),
 
@@ -50,7 +52,7 @@ class _AuthScreenState extends State<AuthScreen> {
                 decoration: InputDecoration(labelText: 'Email'),
                 keyboardType: TextInputType.emailAddress,
                 onChanged: (value) => _email = value,
-                validator: emailValidator,
+                validator: emailValidator.call,
               ),
               SizedBox(height: 16),
 
@@ -58,7 +60,7 @@ class _AuthScreenState extends State<AuthScreen> {
               TextFormField(
                 obscureText: !_isPasswordVisible, // Toggle the visibility of the password
                 onChanged: (value) => _password = value,
-                validator: passwordValidator,
+                validator: passwordValidator.call,
                 decoration: InputDecoration(
                   labelText: 'Password',
                   suffixIcon: IconButton(
@@ -81,7 +83,7 @@ class _AuthScreenState extends State<AuthScreen> {
                 decoration: InputDecoration(labelText: 'Phone Number'),
                 keyboardType: TextInputType.phone,
                 onChanged: (value) => _phoneNo = value,
-                validator: phoneValidator,
+                validator: phoneValidator.call,
               ),
               SizedBox(height: 16),
 

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_assignment/addproduct.dart';
-import 'package:flutter_assignment/getProducts.dart';
 import 'firebase_options.dart';
 import 'auth.dart';  // Import your auth.dart file
 

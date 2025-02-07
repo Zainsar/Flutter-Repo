@@ -4,6 +4,8 @@ import 'package:flutter_assignment/main.dart';
 import 'package:form_field_validator/form_field_validator.dart'; // Import main screen
 
 class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
+
   @override
   _LoginScreenState createState() => _LoginScreenState();
 }
@@ -40,7 +42,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 decoration: InputDecoration(labelText: 'Email'),
                 keyboardType: TextInputType.emailAddress,
                 onChanged: (value) => _email = value,
-                validator: emailValidator,
+                validator: emailValidator.call,
               ),
               SizedBox(height: 16),
 
@@ -62,7 +64,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 obscureText: !_isPasswordVisible, // Toggle visibility of the password
                 onChanged: (value) => _password = value,
-                validator: passwordValidator,
+                validator: passwordValidator.call,
               ),
               SizedBox(height: 16),
 
